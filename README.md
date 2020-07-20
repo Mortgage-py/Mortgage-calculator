@@ -11,6 +11,9 @@ Section [D] Costs.
 Please insert own personal expenses under operational costs and inventory, if you wish to better match script to own situation.
 
 
+Just run the code, answer the asked questions as input and receive output values and visualizations of the expenses over the mortgage lifetime.
+
+
 
 
 Last but not least: Open for feedback and/or any suggestions to improve/expand this script! :)
