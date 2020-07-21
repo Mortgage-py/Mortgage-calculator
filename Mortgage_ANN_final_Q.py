@@ -158,7 +158,7 @@ fixed_costs                 = tax + notary_costs + mortgage_agent + mortgage_con
 renovations                 = double_glass + floor + kitchen + various
 inventory                   = couch + bed + tv + dining_set + coffeemachine + fridge
 operational                 = maintenance + municipality_waste + municipality_sewage + municipality_real_estate + insurance + water + electricity + car_parking + groceries + tv_internet + car_insurance + road_tax + 2*health_insurance 
-tax_refund_y1               = ( mortgage_consult + notary_costs/2 + taxation ) * (1-0.3735)  # [€] Expected tax refund in year 1
+tax_refund_y1               = ( mortgage_consult + notary_costs/2 + taxation ) * (1 - first_tax_bracket)  # [€] Expected tax refund in year 1
 
 
 pr("Initial Costs:" + '\n')
@@ -373,8 +373,9 @@ fig.set_size_inches(8,6)
 if yearly_growth_rate/100 > mortgage_rate_ann:  # If yearly growth rate > mortgage interest an extra 'return' is received each year
     
     plt.plot( future_equity_net_ann/1000 + principal_accumulated_ann/1000     , color="green"  , label="Future valuation of property  "  , linewidth = 3.5)         
-    plt.plot( future_equity_net_ann/1000 , color="blue"   , label="Future return on investment" , linewidth = 3.5) 
-    
+    plt.plot( future_equity_net_ann/1000 , color="blue"             , label="Future return on investment" , linewidth = 3.5) 
+    plt.plot( future_equity_ann_inflation/1000 , color="steelblue"  , label="Future return (inflation adjusted)" , linewidth = 3.5) 
+   
 
 elif yearly_growth_rate <0:
 
